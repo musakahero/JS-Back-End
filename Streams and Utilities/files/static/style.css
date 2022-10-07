@@ -1,0 +1,13 @@
+body {
+    width: 980px;
+    margin: auto;
+    background-color: #98a7c0;
+};
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin:32px;
+}

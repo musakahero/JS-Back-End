@@ -1,24 +1,18 @@
 const http = require('http');
+const router = require('./router')
+const { catalogPage, createPage, createItem } = require('./controllers/catalogController');
+const { homePage, aboutPage, defaultPage } = require('./controllers/homeController');
+const port = 3000;
 
-const server = http.createServer((request, response) => { 
-    console.log('Request received');
-    console.log(request.method);
-    console.log(request.headers);
-    console.log(request.url);
+router.get('/', homePage);
+router.get('/catalog', catalogPage);
+router.get('/create', createPage);
+router.post('/create', createItem)
+router.get('/about', aboutPage);
+router.get('default', defaultPage);
+router.post('default', defaultPage);
 
-    if(request.url == '/'){
-        response.writeHead(200, [
-            'Content-Type', 'text/plain'
-        ])
-        response.write('Hello world!');
-        response.end();
-    } else {
-        response.statusCode = 404;
-        response.end();
-    }
+const server = http.createServer(router.match);
 
-    
-    
-});
+server.listen(port);
 
-server.listen(3000);
