@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+</head>
+
+<body>
+
+    <!-- In case of error, you should display div with class "errorContainer" -->
+    <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+    <div>
+        <div class="errorContainer">
+            <p>Error</p>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="header">
+            {{!-- Navigation --}}
+            <nav class="navbar">
+                <a href="/">Home</a>
+                <a href="/catalog">Catalog</a>
+                <a href="/create">Create Recipe</a>
+            </nav>
+        </div>
+
+    </header>
+    {{!-- Body template --}}
+    {{{body}}}
+</body>
+
+</html>
